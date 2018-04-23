@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 import { PhoneDetailComponent } from './phone-detail/phone-detail.component';
 import { PhoneService } from './phone.service';
-
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { PhoneService } from './phone.service';
     PhoneDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [PhoneService],
   bootstrap: [AppComponent]

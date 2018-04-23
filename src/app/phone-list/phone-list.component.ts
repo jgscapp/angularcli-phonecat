@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Phone } from '../phone';
-import { PHONES } from '../phones';
+import { PhoneService } from '../phone.service';
 
 @Component({
   selector: 'app-phone-list',
@@ -9,26 +9,24 @@ import { PHONES } from '../phones';
 })
 export class PhoneListComponent implements OnInit {
 
-  // phone : Phone = {
-  //   age: 0,
-  //   id: "motorola-xoom-with-wi-fi",
-  //   imageUrl: "img/phones/motorola-xoom-with-wi-fi.0.jpg",
-  //   name: "Motorola XOOM\u2122 with Wi-Fi",
-  //   snippet: "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."
-  // };
+  phones: Phone[];
 
-  phones = PHONES;
+  // selectedPhone: Phone;
 
-  selectedPhone : Phone;
-
-
-  constructor() { }
+  constructor(private phoneService: PhoneService) { }
 
   ngOnInit() {
+    this.getPhones();
   }
 
-  onSelect(phone: Phone): void {
-      this.selectedPhone = phone;
+//   onSelect(phone: Phone): void {
+//       this.selectedPhone = phone;
+// }
+
+
+getPhones(): void {
+  this.phoneService.getPhones()
+      .subscribe(phones => this.phones = phones);
 }
 
 }

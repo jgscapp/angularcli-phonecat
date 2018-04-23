@@ -1,9 +1,20 @@
-<h2>My Phones</h2>
+<div class="container-fluid">
+
+  <h2>My Phones</h2>
+<div class="row">
+<div class="col-md-10">
 <ul class="phones">
-  <li *ngFor="let phone of phones"  [class.selected]="phone === selectedPhone" (click)="onSelect(phone)">
-   <span class="badge">{{phone.id}}</span> {{phone.carrier}}
+   <li *ngFor="let phone of phones" class="img-thumbnail">  <!--[class.selected]="phone === selectedPhone" (click)="onSelect(phone)" -->
+    <a href= "/detail/{{phone.age}}" class="thumb" >
+      <img [src]="phone.imageUrl" alt="{{phone.name}}" >
+    </a>
+    <a href="/detail/{{phone.age}}">{{phone.name}}</a>
+    <p>{{phone.snippet}}</p>
+   <!-- <span class="badge">{{phone.age}}</span> {{phone.id}} -->
  </li>
 </ul>
-
-
-<app-phone-detail [phone]="selectedPhone"><app-phone-detail>
+</div>
+</div>
+</div>
+<!-- Bind the PhonesdetailComponent.selectedPhone to the element's phone property like this. -->
+<!-- <app-phone-detail [phone]="selectedPhone"><app-phone-detail> -->
