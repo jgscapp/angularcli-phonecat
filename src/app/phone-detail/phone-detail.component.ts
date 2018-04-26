@@ -40,6 +40,7 @@ export class PhoneDetailComponent implements OnInit {
 //    .subscribe(phone => this.phone = phone);
 // }
 
+<<<<<<< b1fda2a4b8362c15be2c4ef0ee2c9f2ac96f0ab6
 
 getDetail(): void {
   const id = this.route.snapshot.paramMap.get('id');
@@ -57,6 +58,25 @@ setImage(imageUrl: string): void {
   document.getElementById("mainImage").src = imageUrl;
 }
 
+=======
+getDetail(): void {
+  const id = this.route.snapshot.paramMap.get('id');
+  this.PhoneService.getDetail(id)
+   .subscribe(details => this.details = details);
+   // console.log("this is detail", detailx, " from getdetail");   properties are undefined here
+   //this.getFirstImage();
+}
+
+
+
+setImage(imageUrl: string): void {
+  // console.log("this is detail", this.details, " and that's it");  after html page is loaded, properties are available
+//  this.mainImageUrl = imageUrl;
+// got error "Property src does not exist on type HTMLElement,  use casting with HTMLImageElement to fix it"
+  (<HTMLImageElement>document.getElementById("mainImage")).src = imageUrl;
+}
+
+>>>>>>> Add HTTP Service and Search option
  getFirstImage(): void {
    // console.log("this is detail", this.details, " first image");
    this.mainImageUrl = this.details.images[0];

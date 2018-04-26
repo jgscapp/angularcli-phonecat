@@ -24,14 +24,23 @@ import { PhoneSearchComponent } from './phone-search/phone-search.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+<<<<<<< b1fda2a4b8362c15be2c4ef0ee2c9f2ac96f0ab6
 
 
+=======
+    
+    
+>>>>>>> Add HTTP Service and Search option
     // The HttpClientInMemoryWebApiModule module intercepts HTTP request
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
        InMemoryDataService, { dataEncapsulation: false }
+<<<<<<< b1fda2a4b8362c15be2c4ef0ee2c9f2ac96f0ab6
   )
+=======
+      )
+>>>>>>> Add HTTP Service and Search option
   ],
   providers: [PhoneService],
   bootstrap: [AppComponent]
